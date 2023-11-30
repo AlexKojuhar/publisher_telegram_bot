@@ -1,0 +1,7 @@
+.env
+videos/*
+__pycache__
+venv
+cookies.txt
+autouploader.db
+.DS_Store
