@@ -1,19 +1,10 @@
 import sqlite3
 from datetime import datetime, timedelta
-import os
+
+from helpers import dict_factory, extract_filename_from_path
 
 ONE_DAY_IN_UNIX = 86400
 MAX_DAY_COUNT_FOR_SCHEDULING_IN_UNIX = 10 * ONE_DAY_IN_UNIX
-
-def extract_filename_from_path(path):
-    filename = os.path.basename(path).split('.')[0]
-    return filename
-
-def dict_factory(cursor, row):
-    d = {}
-    for idx, col in enumerate(cursor.description):
-        d[col[0]] = row[idx]
-    return d
 
 def get_unpublished_videos():
     try:

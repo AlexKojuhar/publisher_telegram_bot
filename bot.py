@@ -4,6 +4,7 @@ import re
 from dotenv import load_dotenv
 from instagrapi import Client
 from db import add_video_to_db, check_if_video_already_exist, check_if_user_can_publish, get_unpublished_videos
+from helpers import create_dir_if_not_exist
 
 load_dotenv()
 
@@ -64,11 +65,6 @@ def download_instagram_video_with_tags(post_link):
     except Exception as e:
         print(f"Error: {e}")
         return None
-
-def create_dir_if_not_exist(dir_name):
-    is_exist = os.path.exists(dir_name)
-    if not is_exist:
-        os.makedirs(dir_name)
     
 def video_message_html(caption):
     return caption
