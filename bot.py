@@ -53,6 +53,7 @@ def handle_response(message):
 
 def download_instagram_video_with_tags(post_link):
     try:
+        create_dir_if_not_exist('videos')
         media_pk = cl.media_pk_from_url(post_link)
         path = cl.video_download(media_pk, 'videos')
         tags = get_video_tags(media_pk)
@@ -63,6 +64,11 @@ def download_instagram_video_with_tags(post_link):
     except Exception as e:
         print(f"Error: {e}")
         return None
+
+def create_dir_if_not_exist(dir_name):
+    is_exist = os.path.exists(dir_name)
+    if not is_exist:
+        os.makedirs(dir_name)
     
 def video_message_html(caption):
     return caption
