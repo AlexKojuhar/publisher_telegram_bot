@@ -47,16 +47,6 @@ This is a Telegram bot for scheduled publishing video from Instagram to TikTok w
 
     Save and exit.
 
-2. **Replace environment variables with your actual data:**
-
-    ```env
-   BOT_TOKEN=your_bot_token_should_be_here
-   INSTAGRAM_USERNAME=your_instagram_username_should_be_here
-   INSTAGRAM_PASSWORD=your_instagram_password_should_be_here
-    ```
-
-    Save and exit.
-
 3. **Add cookies.txt**
 
    Authentication uses your browser's cookies. This workaround was done due to TikTok's stricter stance on authentication by a Selenium-controlled browser.
